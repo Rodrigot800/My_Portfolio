@@ -12,14 +12,11 @@
     --cor4:#00b4d8;
     --cor5:#90e0ef;
 }
-body,html {
-    height: 100em;
-}
 header{
     position: fixed;
     top: 0;
     background-color:white;
-    width: 100vw;
+    width: 99%;
     text-align: center;
     z-index: 1;
 }
@@ -52,25 +49,37 @@ menu{
 }
 main{
     display: block;
-    height: 80vh;
-    width: 100vw;
-    margin: auto;
+    width: 100%;
+    color: white;
+    margin-top: 50px;
+}
+#teste{
+    background-color: lightblue;
+}
+#p1{
     background-image: linear-gradient(to top left, var(--cor-1),50%, var(--cor2));
     color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 75px;
+    height: 95vh;
+    padding-top: 30px;
+
 }
 #apresentação1{
-    background-color: rgba(255, 255, 255, 0.091);
+    margin: auto;
+    background-color: #ffffff1c;
     text-align: center;
-    padding: 10px;
+    padding: 10px;  
     border-radius: 10px;
+    width: 80%;
+    height: 80%;
+}
+#apresentação2{
+    display: block;
+    background-color: #90e0ef;
 }
 #imagem1{
     display: block;
     margin: auto;
-    width: 87vw;
+    width: 85vw;
     height: auto;
     transition: transform 4s ;
     transform: translate(-5px,-30px);
