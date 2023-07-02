@@ -57,7 +57,6 @@ main{
 #p1{
     background-image: linear-gradient(to top left, var(--cor-1),50%, var(--cor2));
     color: white;
-    height: 100vh;
     padding-top: 30px;
 
 }
@@ -75,7 +74,6 @@ main{
     padding: 10px;  
     border-radius: 10px;
     width: 90%;
-    height: 90%;
     
 }
 #imagem1{
@@ -139,17 +137,23 @@ main{
     background-color: #03045e50;
 }
 .projet{
+    display: block;
     background-color: #24004650;
     margin: auto ;
     width: 250px;
     height: 250px;
+    position: relative;
 }
 #imgp1{
+    display: block;
     background-color: #7f05f2;
     padding-top: 10px;
     margin: auto ;
     width: 125px;
     height: 125px;
+    position: absolute;
+    top: 10%;
+    left: 25%;
 }
 footer{
     background-image: url(..---);
