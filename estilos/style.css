@@ -54,7 +54,6 @@ main{
     color: white;
     padding-top: 50px;
 }
-
 #p1{
     background-image: linear-gradient(to top left, var(--cor-1),50%, var(--cor2));
     color: white;
@@ -90,19 +89,15 @@ main{
 }
 #p2{
     background-image: linear-gradient(to top right, var(--cor2),50%, var(--cor-1)); 
-    margin-top: -5px;
-    height: 110vh;
 }
 #apresentação2{
     display: block;
     width: 90%;
-    height: 90%;
     margin: auto;
     padding: 10px;
     padding-top: 50px;
     border-radius: 10px;
-    text-align: center justify;
-    font-size: 0.8em;
+    text-align: center ;    
     background-color: #03045e30;
 }
 #img2{
@@ -115,8 +110,10 @@ main{
 
 }
 #p3{
+
     background-image: linear-gradient(to bottom right, var(--cor2),50%, var(--cor-1));
     height: 100vh;
+    padding-top: 50px;
 }
 #apresentação3{
     display: block;
@@ -130,12 +127,10 @@ main{
 }
 #p4{
     background-image: linear-gradient(to top right, var(--cor2),50%, var(--cor-1));
-    height: 100vh;
 }
 #apresentação4{
     display: block;
     width: 90%;
-    height: 90%;
     margin: auto;
     padding: 10px;
     padding-top: 50px;
@@ -143,7 +138,19 @@ main{
     text-align: center;
     background-color: #03045e50;
 }
-
+.projet{
+    background-color: #24004650;
+    margin: auto ;
+    width: 250px;
+    height: 250px;
+}
+#imgp1{
+    background-color: #7f05f2;
+    padding-top: 10px;
+    margin: auto ;
+    width: 125px;
+    height: 125px;
+}
 footer{
-    background-color: lightcoral;
+    background-image: url(..---);
 }
