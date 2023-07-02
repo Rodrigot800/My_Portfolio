@@ -121,6 +121,32 @@ main{
 }
 #p3{
     background-image: linear-gradient(to top left, var(--cor1), var(--cor2));
+    height: 100vh;
+}
+#apresentação3{
+    display: block;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    padding: 10px;
+    padding-top: 50px;
+    border-radius: 10px;
+    background-color: #03045e30;
+}
+#p4{
+    background-image: linear-gradient(to top, black, 40%, var(--cor1), black);
+    height: 100vh;
+}
+#apresentação4{
+    display: block;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    padding: 10px;
+    padding-top: 50px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #03045e50;
 }
 
 footer{
