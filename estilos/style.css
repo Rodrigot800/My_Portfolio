@@ -14,7 +14,6 @@
 }
 html,body{
     background-color: #03045e;
-    height: 600vh;
 }
 h2{
     padding: 10px;
@@ -121,6 +120,7 @@ main{
     display: block;
     width: 90%;
     margin: auto;
+    height: 100%;
     padding: 10px;
     padding-top: 50px 0px 50px 0px;
     border-radius: 10px;
@@ -132,7 +132,7 @@ main{
     background-color: white;
     width: 90px;
     border-radius: 10px;
-    border: 1px 1px 1px var(--cor-1) solid;
+    box-shadow: 2px 2px 3px var(--cor-1);
     padding: 5px;
 }
 .imgi{
@@ -142,7 +142,7 @@ main{
 }
 #p4{
     background-image: linear-gradient(to top right, var(--cor2),50%, var(--cor-1));
-    padding-top: 50px;
+    padding: 50px 0px 50px 0px;
 }
 #apresentação4{
     display: block;
@@ -162,6 +162,7 @@ main{
     height: 370px;
     position: relative;
     border-radius: 10px;
+    display: inline-block;
 }
 
 #imgp1{
@@ -172,7 +173,29 @@ main{
     height: 250px;
     border-radius: 10px 10px 0px 0px;
 }
+#textp1{
+    color: black;
+}
+#text > h2{
+    text-align: center;
+}
 footer{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
+    padding-top: 30px;
+    height: 200px;
+}
+.conti{
+    display:inline-block;
+    background-color: #fff;
+    width: 90px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px  var(--cor-1) ;
+    padding: 5px;
+    text-align: center;
+}
+.conimg{
+    width: 80px;
+    height: auto;
 }
