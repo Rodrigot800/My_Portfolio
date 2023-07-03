@@ -61,6 +61,7 @@ main{
     background-image: linear-gradient(to top left, var(--cor-1),50%, var(--cor2));
     color: white;
     padding-top: 30px;
+    padding-bottom: 40px;
 
 }
 #imagemPerfil{
@@ -140,16 +141,17 @@ main{
     background-color: #03045e50;
 }
 .projet{
-    background-color: #24004650;
+    background-color: #fff;
     margin: auto ;
-    width: 250px;
-    height: 250px;
+    margin-bottom: 20px;
+    width: 270px;
+    height: 270px;
     position: relative;
     border-radius: 10px;
 }
 
 #imgp1{
-    background-color: #7f05f2;
+    background-color: #7f0;
     padding-top: 10px;
     margin: auto ;
     width: 100%;
@@ -157,5 +159,6 @@ main{
     border-radius: 10px 10px 0px 0px;
 }
 footer{
-    background-image: url(..---);
+    background-color: black;
+    color: white;
 }
