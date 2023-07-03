@@ -179,6 +179,27 @@ main{
 #text > h2{
     text-align: center;
 }
+#imagem2{
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    width: 250px;
+    height: auto;
+}
+#button{
+    background-color: #007abc;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.3em;
+}
+#button:hover{
+    background-color: #006eff;
+}
+#button > a{
+    text-decoration: none;
+    color: #fff;
+}
 footer{
     background-color: white;
     color: black;
