@@ -3,16 +3,16 @@
     var dataAtual = new Date()
     var hora = dataAtual.getHours()
 
-    if ( hora >= 6 && hora < 12) {
+    if ( hora >= 6 && hora < 12 ) {
         saudacao.innerHTML = `olá, bom dia!`
-    }
-    if (hora >= 12 && hora < 18) {
+    } else if (hora >= 12 && hora < 18) {
         saudacao.innerHTML = `olá, boa tarde!`
     }
-    if (hora >= 18 && hora < 6) {
-        
+    else {
+        saudacao.innerHTML = `olá, boa noite!`
     }
 }
+
 
 function funcMenu() {
     var itens = document.getElementById("itens")

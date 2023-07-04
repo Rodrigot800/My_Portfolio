@@ -216,6 +216,9 @@ footer{
     padding-top: 20px;
     height: 150px;
 }
+footer h2{
+    text-align: center  ;
+}
 #contato{
     display: flex;
     justify-content: center;
