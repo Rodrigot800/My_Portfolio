@@ -87,7 +87,7 @@ main{
     width: 90%;
     
 }
-#imagem1{
+.imagem1{
     display: block;
     margin: auto;
     width: 90vw;
@@ -135,6 +135,13 @@ main{
     background-color: #03045e30;
     text-align: center;
 }
+.alinhamento{
+    display: flex;
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 10px;
+    flex-wrap: wrap;
+}
 .imgcnc{    
     display:inline-block;
     background-color: white;
@@ -169,9 +176,10 @@ main{
     height: 400px;
     position: relative;
     border-radius: 10px;
-    display: inline-block;
 }
-
+.alinhamento a{
+    text-decoration: none;
+}
 #imgp1{
     background-color: #7f0;
     padding-top: 10px;
@@ -181,7 +189,7 @@ main{
     border-radius: 10px 10px 0px 0px;
 }
 #textp1{
-    color: black;
+    color: black; 
 }
 #text > h2{
     text-align: center;
@@ -189,7 +197,7 @@ main{
 #imagem2{
 
     margin: auto;
-    margin: 100px 0px 10px;
+    margin: 50px 0px 10px;
     padding: 10px;
     width: 250px;
     height: auto;
@@ -218,11 +226,6 @@ footer{
 }
 footer h2{
     text-align: center  ;
-}
-#contato{
-    display: flex;
-    justify-content: center;
-    column-gap: 10px;
 }
 .conti{
     background-color: #fff;
