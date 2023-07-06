@@ -121,7 +121,6 @@ main{
 #p3{
 
     background-image: linear-gradient(to bottom right, var(--cor2),50%, var(--cor-1));
-    height: 100vh;
     padding-top: 50px;
 }
 #apresentação3{
@@ -141,6 +140,12 @@ main{
     row-gap: 10px;
     column-gap: 10px;
     flex-wrap: wrap;
+}
+.text_conhecimentos{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    display: none;
 }
 .imgcnc{    
     display:inline-block;
