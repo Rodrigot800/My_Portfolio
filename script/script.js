@@ -60,23 +60,26 @@ function jstext() {
     imgcode.style.display = 'none'
     text.style.display = 'block'
 }
-/*
+
 function gittext() { 
     var img = document.getElementById('imgcode')
     var text = document.getElementById('text4')
-    var apg = document.querySelectorAll('#text1,#text2,#text3,#text5,#text6')
+    var apg = document.querySelectorAll('.text_conhecimentos')
 
-    apg.style.display = 'none'
-    imgcode.style.display = 'none'
+    apg.forEach(function(element) {
+        element.style.display = 'none';
+    });    imgcode.style.display = 'none'
     text.style.display = 'block'
 
 }
 function githubtext() { 
     var img = document.getElementById('imgcode')
-    var text = document.getElementById('tex5')
-    var apg = document.querySelectorAll('#text1,#text2,#text3,#text4,#text6')
+    var text = document.getElementById('text5')
+    var apg = document.querySelectorAll('.text_conhecimentos')
 
-    apg.style.display = 'none'
+    apg.forEach(function(element) {
+        element.style.display = 'none';
+    });
     imgcode.style.display = 'none'
     text.style.display = 'block'
 
@@ -84,10 +87,12 @@ function githubtext() {
 function phptext() { 
     var img = document.getElementById('imgcode')
     var text = document.getElementById('text6')
-    var apg = document.querySelectorAll('#text1,#text2,#text3,#text4,#text5')
+    var apg = document.querySelectorAll('.text_conhecimentos')
 
-    apg.style.display = 'none'
+    apg.forEach(function(element) {
+        element.style.display = 'none';
+    });
     imgcode.style.display = 'none'
     text.style.display = 'block'
 
-}*/
+}

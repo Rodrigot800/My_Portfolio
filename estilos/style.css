@@ -21,6 +21,19 @@
 html,body{
     background-color: #03045e;
 }
+.ali{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#apresentação_perfil2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    
+
+}
 h2{
     padding: 10px;
 }
@@ -73,10 +86,9 @@ main{
 }
 #imagemPerfil{
     border-radius: 50%;
-    box-shadow: 1px 1px 10px 5px #24004680;
     width: 150px;
     height: auto;
-    margin-bottom: 10px;
+    margin: 2px;
 }
 #apresentação1{
     margin: auto;
@@ -137,8 +149,8 @@ main{
 .alinhamento{
     display: flex;
     justify-content: center;
-    row-gap: 10px;
-    column-gap: 10px;
+    row-gap: 15px;
+    column-gap: 15px;
     flex-wrap: wrap;
 }
 .text_conhecimentos{
@@ -155,6 +167,11 @@ main{
     box-shadow: 2px 2px 3px var(--cor-1);
     padding: 5px;
 }
+.imgcnc:hover{
+    background-color: lightgreen;
+    transform: translate(0px, -10px);
+}
+
 .imgi{
     display: block;
     width: 80px;
