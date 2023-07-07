@@ -152,6 +152,8 @@ main{
     row-gap: 15px;
     column-gap: 15px;
     flex-wrap: wrap;
+    margin-top: 20px;
+    
 }
 .text_conhecimentos{
     width: 100%;
@@ -185,7 +187,6 @@ main{
     display: block;
     width: 90%;
     margin: auto;
-    padding: 30px;
     border-radius: 10px;
     text-align: center;
     background-color: #03045e50;
@@ -199,7 +200,14 @@ main{
     position: relative;
     border-radius: 10px;
 }
-.alinhamento a{
+.alinhamento-1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+}
+.alinhamento-1 a{
     text-decoration: none;
 }
 #imgp1{
