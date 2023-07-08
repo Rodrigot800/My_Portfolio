@@ -1,0 +1,12 @@
+@media screen and (min-width: 600px){
+    .projet{
+        margin: 20px;
+    }
+
+    
+}
+@media screen and (min-width: 1200px) {
+    *{
+        font-size: 1em;
+    }
+}
