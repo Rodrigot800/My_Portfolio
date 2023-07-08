@@ -31,8 +31,6 @@ html,body{
     justify-content: center;
     align-items: center;
     width: 200px;
-    
-
 }
 h2{
     padding: 10px;
@@ -52,6 +50,9 @@ header{
 }
 #menu:hover{
     cursor: pointer;
+}
+nav{
+    box-shadow: 1px 5px 5px var(--cor-1);
 }
 menu{
     display: none;
@@ -75,6 +76,7 @@ main{
     color: white;
     padding-top: 50px;
     font-family: pi;
+    line-height: 1.5em;
 }
 #p1{
     background-image: linear-gradient(to top left, var(--cor-1),50%, var(--cor2));
@@ -128,10 +130,8 @@ main{
     height: auto;
     transition: transform 4s ;
     transform: translate(-10px,-20px);
-
 }
 #p3{
-
     background-image: linear-gradient(to bottom right, var(--cor2),50%, var(--cor-1));
     padding-top: 50px;
 }
@@ -152,8 +152,6 @@ main{
     row-gap: 15px;
     column-gap: 15px;
     flex-wrap: wrap;
-    margin-top: 20px;
-    
 }
 .text_conhecimentos{
     width: 100%;
@@ -166,14 +164,13 @@ main{
     background-color: white;
     width: 90px;
     border-radius: 10px;
-    box-shadow: 2px 2px 3px var(--cor-1);
+    box-shadow: 2px 5px 5px var(--cor4);
     padding: 5px;
 }
 .imgcnc:hover{
-    background-color: lightgreen;
+    background-color: lightskyblue;
     transform: translate(0px, -10px);
 }
-
 .imgi{
     display: block;
     width: 80px;
@@ -182,6 +179,7 @@ main{
 #p4{
     background-image: linear-gradient(to top right, var(--cor2),50%, var(--cor-1));
     padding: 50px 0px 50px 0px;
+    line-height: 1em;
 }
 #apresentação4{
     display: block;
@@ -199,13 +197,12 @@ main{
     height: 400px;
     position: relative;
     border-radius: 10px;
+    box-shadow: 3px 5px 5px  var(--cor4);
 }
 .alinhamento-1{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
-
 }
 .alinhamento-1 a{
     text-decoration: none;
@@ -220,19 +217,19 @@ main{
 }
 #textp1{
     color: black; 
+    margin-bottom: 10px;
 }
 #text > h2{
     text-align: center;
 }
 #imagem2{
-
     margin: auto;
     margin: 50px 0px 10px;
     padding: 10px;
     width: 250px;
     height: auto;
 }
-#button{
+.button{
     display: block;
     background-color: var(--cor4);
     border: none;
@@ -240,11 +237,13 @@ main{
     padding: 20px;
     font-size: 1.5em;
     margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 2px 5px 5px var(--cor3);
 }
-#button:hover{
+.button:hover{
     background-color: var(--cor5);
 }
-#button > a{
+.button > a{
     text-decoration: none;
     color: #fff;
 }
@@ -264,6 +263,12 @@ footer h2{
     box-shadow: 1px 1px 1px 1px  var(--cor-1) ;
     padding: 3px;
     text-align: center;
+}
+.alinhamento-2{
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    column-gap: 10px;
 }
 .conimg{
     width: 50px;
