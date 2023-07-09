@@ -182,8 +182,7 @@ main{
 }
 #p4{
     background-image: linear-gradient(to top right, var(--cor2),50%, var(--cor-1));
-    padding: 50px;
-
+    padding: 50px 0px 50px 0px;
     line-height: 1em;
 }
 #apresentação4{
@@ -213,7 +212,7 @@ main{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 10px;
+    row-gap: 20px;
 }
 .alinhamento-1 a{
     text-decoration: none;
@@ -239,7 +238,7 @@ main{
 
 #imagem2{
     margin: auto;
-    margin: 50px 0px 10px;
+    margin: 50px 0px 0px 10px;
     padding: 10px;
     width: 250px;
     height: auto;
@@ -283,7 +282,6 @@ footer h2{
 .alinhamento-2{
     display: flex;
     justify-content: center;
-    margin-top: -10px;
     column-gap: 10px;
 }
 .conimg{
