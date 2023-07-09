@@ -1,11 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Calculadora</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: linear-gradient(to top right, #f72585 , #b5179e , #7209b7);
+    }
+
+    .calculator {
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(7, 69, 255, 0.2);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator textarea {
+      display: block;
+      width: 90%;
+      height: 50px;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 2em;
+      resize: none;
+      background-color: lightskyblue;
+
+    }
+
+    .calculator button {
+      width: 48%;
+      padding: 10px;
+      font-size: 18px;
+      margin-bottom: 5px;
+      background-color: lightblue;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: lightskyblue;
+    }
+
+    .calculator button:active {
+      background-color: lightskyblue;
+    }
+  </style>
 </head>
 <body>
-    <h1>em breve</h1>
+  <div class="calculator">
+    <textarea id="expression" readonly></textarea>
+    <div>
+      <button onclick="clearExpression()">C</button>
+      <button onclick="deleteChar()">&#9003;</button>
+      <button onclick="appendChar('1')">1</button>
+      <button onclick="appendChar('2')">2</button>
+      <button onclick="appendChar('3')">3</button>
+      <button onclick="appendChar('4')">4</button>
+      <button onclick="appendChar('5')">5</button>
+      <button onclick="appendChar('6')">6</button>
+      <button onclick="appendChar('7')">7</button>
+      <button onclick="appendChar('8')">8</button>
+      <button onclick="appendChar('9')">9</button>
+      <button onclick="appendChar('0')">0</button>
+      <button onclick="appendChar('+')">+</button>
+      <button onclick="appendChar('-')">-</button>
+      <button onclick="appendChar('/')">&#247;</button>
+      <button onclick="appendChar('*')">x</button>
+      <button onclick="appendChar('.')">. </button>
+      <button onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    function appendChar(char) {
+      document.getElementById("expression").value += char;
+    }
+
+    function clearExpression() {
+      document.getElementById("expression").value = "";
+    }
+
+    function deleteChar() {
+      var expression = document.getElementById("expression").value;
+      document.getElementById("expression").value = expression.slice(0, -1);
+    }
+
+    function calculate() {
+      var expression = document.getElementById("expression").value;
+      var result = eval(expression);
+      document.getElementById("expression").value = result;
+    }
+  </script>
 </body>
-</html>
+</html>  
