@@ -6,15 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <style>
+        @font-face {
+            font-family: Pixeled;
+            src: url(font/VCR_OSD_MONO_1.001.ttf);
+            font-weight: normal;
+            font-style: normal;
+        }
         .Calculadora{
             margin: auto;
             width: 90%;
-            height: 70vh;
-            margin-top: 100px;
+            margin-top: 50px;
             background-color: lightskyblue;
             border-radius: 20px;
             border: 2px solid black;
             box-shadow: 10px 10px black;
+            font-size: 2em;
+            font-family: Pixeled, Arial, Helvetica, sans-serif;
         }
         #resultado{
             background-color: azure;
@@ -25,9 +32,25 @@
         #bot{
             display: flex;
             justify-content: center;
+            margin-top: 20px;
             flex-wrap: wrap;
-            padding: 30px;
+            row-gap: 10px;
+            column-gap: 10px;
+            padding: 10px;
 
+        }
+        #bot > button{
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 20%;
+            border: 1px solid black;
+            box-shadow: 5px 5px black;
+            background-color: azure;
+
+        }
+        #limpar{
+            width: 200px;
         }
     </style>
 </head>
@@ -38,22 +61,20 @@
             <button onclick="appendChar(1)">1</button>
             <button onclick="appendChar(2)">2</button>
             <button onclick="appendChar(3)">3</button>
-            <button onclick="appendChar(4)">4</button>
-            <button onclick="appendChar(5)">5</button>
-            <button onclick="appendChar(6)">6</button>
-            <button onclick="appendChar(7)">7</button>
-            <button onclick="appendChar(8)">8</button>
-            <button onclick="appendChar(9)">9</button>
-            <button onclick="appendChar(0)">0</button>
-            <button onclick="appendChar(1)">1</button>
-            <button onclick="appendChar()"></button>
-            <button onclick="appendChar()"></button>
-            <button onclick="appendChar()"></button>
-            <button onclick="appendChar()"></button>
-            <button onclick="appendChar()"></button>
-            <button onclick="appendChar()"></button>
-            <button onclick="appendChar()"></button>
-            <button onclick="appendChar()"></button>
+            <button onclick="appendChar(4)">+</button>
+            <button onclick="appendChar(5)">4</button>
+            <button onclick="appendChar(6)">5</button>
+            <button onclick="appendChar(7)">6</button>
+            <button onclick="appendChar(8)">-</button>
+            <button onclick="appendChar(9)">7</button>
+            <button onclick="appendChar(0)">8</button>
+            <button onclick="appendChar(1)">9</button>
+            <button onclick="appendChar()">&#247</button>
+            <button onclick="appendChar()">.</button>
+            <button onclick="appendChar()">0</button>
+            <button onclick="appendChar()">&#9003</button>
+            <button onclick="appendChar()">x</button>
+            <button id="limpar" onclick="appendChar()">resert</button>
         </div>
     </div>
 </body>
