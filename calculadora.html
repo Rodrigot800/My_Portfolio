@@ -25,6 +25,17 @@
             border: 2px solid black;
             box-shadow: 10px 10px black;
         }
+        #expresao{
+          display: block;
+          background-color: azure;
+          width: 250px;
+          padding: 10px;
+          margin: auto;
+          resize: none;
+          font-size: 2em;
+          text-align: right;
+          border: none;
+        }
         #resultado{
             background-color: azure;
             width: 100%;
@@ -54,7 +65,7 @@
         #bot > .btn:hover{
             background-color: #90e0ef;
         }
-        #limpar{
+        .limpar{
             width: 120px;
             height: 60px;
             border-radius: 20px;
@@ -64,35 +75,52 @@
             text-align: center;
             font-size: 1.2em;
         }
-        #limpar:hover{
+        .limpar:hover{
             background-color: #90e0ef;
         }
     </style>
 </head>
 <body>
     <div class="Calculadora" class="btn" >
-        <div id="resultado" re></div>
+        <div id="resultado"><textarea id="expresao" cols="30" rows="2"></textarea></div>
         <div id="bot">
-            <button class="btn" onclick="appendChar(1)">1</button>
-            <button class="btn"  onclick="appendChar(2)">2</button>
-            <button class="btn"  onclick="appendChar(3)">3</button>
-            <button class="btn"  onclick="appendChar(4)">+</button>
-            <button class="btn"  onclick="appendChar(5)">4</button>
-            <button class="btn"  onclick="appendChar(6)">5</button>
-            <button class="btn"  onclick="appendChar(7)">6</button>
-            <button class="btn"  onclick="appendChar(8)">-</button>
-            <button class="btn"  onclick="appendChar(9)">7</button>
-            <button class="btn"  onclick="appendChar(0)">8</button>
-            <button class="btn"  onclick="appendChar(1)">9</button>
-            <button class="btn"  onclick="appendChar()">&#247</button>
-            <button class="btn"  onclick="appendChar()">.</button>
-            <button class="btn"  onclick="appendChar()">0</button>
-            <button class="btn"  onclick="appendChar()">&#9003</button>
-            <button class="btn"  onclick="appendChar()">x</button>
-            <button id="limpar">limpar</button>
-            <button id="limpar">=</button>
+            <button class="btn"  onclick="appendChar('1')">1</button>
+            <button class="btn"  onclick="appendChar('2')">2</button>
+            <button class="btn"  onclick="appendChar('3')">3</button>
+            <button class="btn"  onclick="appendChar('+')">+</button>
+            <button class="btn"  onclick="appendChar('4')">4</button>
+            <button class="btn"  onclick="appendChar('5')">5</button>
+            <button class="btn"  onclick="appendChar('6')">6</button>
+            <button class="btn"  onclick="appendChar('-')">-</button>
+            <button class="btn"  onclick="appendChar('7')">7</button>
+            <button class="btn"  onclick="appendChar('8')">8</button>
+            <button class="btn"  onclick="appendChar('9')">9</button>
+            <button class="btn"  onclick="appendChar('/')">&#247</button>
+            <button class="btn"  onclick="appendChar('.')">.</button>
+            <button class="btn"  onclick="appendChar('0')">0</button>
+            <button class="btn"  onclick="apgUmN()">&#9003</button>
+            <button class="btn"  onclick="appendChar('*')">x</button>
+            <button id="limpar" class="limpar" onclick="limparExpression()">limpar</button>
+            <button id="calcExpression" class="limpar" onclick="calcExpression()">=</button>
         </div>
     </div>
+    <script>
+      function appendChar(char) {
+        document.getElementById("expresao").value +=char;
+      }
+      function limparExpression() {
+        document.getElementById("expresao").value = '';
+      }
+      function apgUmN() {
+        var apg = document.getElementById("expresao").value;
+        document.getElementById("expresao").value = apg.slice(0,-1);
+      }
+      function calcExpression() {
+        var expression = document.getElementById("expresao").value;
+        var result = eval(expression);
+        document.getElementById("expresao").value = result;
+      }
+    </script>
 </body>
 </html>
 <!-- <!DOCTYPE html>
