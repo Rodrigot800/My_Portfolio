@@ -21,6 +21,10 @@
 html,body{
     background-color: #03045e;
 }
+.aprh2{
+    padding: 25px;
+    font-size: 2em;
+}
 .ali{
     display: flex;
     justify-content: center;
