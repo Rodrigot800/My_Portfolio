@@ -10,6 +10,7 @@
       padding: 0px;
       box-sizing: border-box;
       text-align: center;
+      background-color: lightskyblue;
     }
     #jogo{
       display: flex;
@@ -23,10 +24,11 @@
       width: 100PX;
       border: 1px solid black;
       font-size: 4em;
+      background-color: aliceblue;
     }
     #button{
       margin: 20px;
-      background-color: lightseagreen;
+      background-color: lightgreen;
       height: 40px;
       width: 80px;
     }
@@ -46,11 +48,14 @@
     <div class="cell" onclick="jogada(7)"></div>
     <div class="cell" onclick="jogada(8)"></div>
 
+    <h2 id="msg"></h2>
+
     <button id="button" onclick="reset()">Reiniciar</button>
   </div>
   <script>
     let player =  "X"
     let jogo = Array(9).fill("")
+    let msg = document.getElementById("msg")
 
     function jogada(index) {
       if (jogo[index] === "") {
@@ -58,11 +63,11 @@
         document.getElementsByClassName("cell")[index].innerHTML = player;
 
         if (checkWin()) {
-          alert("jogador " + player + " venceu!")
+          alert("o jogador "+ player + " venceu!")
           reset()
         } else if (checkDraw()) {
-          alert("empate!");
-          reset();
+          alert("empate")
+          reset()
         } else {
           player = player ==="X"?"O":"X"
         }
