@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Jogo da Memória</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+
+    .memory-game {
+      width: 300px;
+      height: 300px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #3498db;
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease;
+    }
+
+    .card.open {
+      transform: rotateY(180deg);
+    }
+
+    .card .front,
+    .card .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .card .front {
+      transform: rotateY(0deg);
+    }
+
+    .card .back {
+      transform: rotateY(180deg);
+    }
+
+    .card .back img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .message {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4caf50;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <h1>em breve</h1>
+  <div class="memory-game">
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+      <div class="back"><img src="image1.jpg" alt="Image 1"></div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+      <div class="back"><img src="image2.jpg" alt="Image 2"></div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+      <div class="back"><img src="image1.jpg" alt="Image 1"></div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+      <div class="back"><img src="image2.jpg" alt="Image 2"></div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+      <div class="back"><img src="image3.jpg" alt="Image 3"></div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+      <div class="back"><img src="image4.jpg" alt="Image 4"></div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+     
+      <div class="back"><img src="image3.jpg" alt="Image 3"></div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="front">?</div>
+      <div class="back"><img src="image4.jpg" alt="Image 4"></div>
+    </div>
+  </div>
+  <div class="message"></div>
+  <a href="#" class="button" onclick="restartGame()">Reiniciar</a>
+
+  <script>
+    var cards = document.querySelectorAll('.card');
+    var message = document.querySelector('.message');
+    var hasFlippedCard = false;
+    var lockBoard = false;
+    var firstCard, secondCard;
+
+    cards.forEach(function(card) {
+      card.addEventListener('click', flipCard);
+    });
+
+    function flipCard() {
+      if (lockBoard || this === firstCard) return;
+
+      this.classList.add('open');
+
+      if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+      } else {
+        secondCard = this;
+        checkMatch();
+      }
+    }
+
+    function checkMatch() {
+      var isMatch = firstCard.querySelector('.back img').src === secondCard.querySelector('.back img').src;
+
+      isMatch ? disableCards() : unflipCards();
+    }
+
+    function disableCards() {
+      firstCard.removeEventListener('click', flipCard);
+      secondCard.removeEventListener('click', flipCard);
+
+      resetBoard();
+      checkWin();
+    }
+
+    function unflipCards() {
+      lockBoard = true;
+
+      setTimeout(function() {
+        firstCard.classList.remove('open');
+        secondCard.classList.remove('open');
+
+        resetBoard();
+      }, 1000);
+    }
+
+    function resetBoard() {
+      hasFlippedCard = false;
+      lockBoard = false;
+      firstCard = null;
+      secondCard = null;
+    }
+
+    function checkWin() {
+      var matchedCards = document.querySelectorAll('.card.open');
+      if (matchedCards.length === cards.length) {
+        message.textContent = 'Parabéns! Você venceu!';
+      }
+    }
+
+    function restartGame() {
+      cards.forEach(function(card) {
+        card.classList.remove('open');
+        card.addEventListener('click', flipCard);
+      });
+
+      resetBoard();
+      message.textContent = '';
+    }
+  </script>
 </body>
 </html>
