@@ -1,11 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joga da velha</title>
+  <style>
+    body{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    #jogo{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 350px;
+      margin: auto;
+    }
+    #jogo > div{
+      height: 100px;
+      width: 100PX;
+      border: 1px solid black;
+      font-size: 4em;
+    }
+    #button{
+      margin: 20px;
+      background-color: lightseagreen;
+      height: 40px;
+      width: 80px;
+    }
+  </style>
 </head>
 <body>
-    <h1>em breve</h1>
+  <h1>jogo da velha</h1>
+  <div id="jogo">
+
+    <div class="cell" onclick="jogada(0)"></div>
+    <div class="cell" onclick="jogada(1)"></div>
+    <div class="cell" onclick="jogada(2)"></div>
+    <div class="cell" onclick="jogada(3)"></div>
+    <div class="cell" onclick="jogada(4)"></div>
+    <div class="cell" onclick="jogada(5)"></div>
+    <div class="cell" onclick="jogada(6)"></div>
+    <div class="cell" onclick="jogada(7)"></div>
+    <div class="cell" onclick="jogada(8)"></div>
+
+    <button id="button" onclick="reset()">Reiniciar</button>
+  </div>
+  <script>
+    let player =  "X"
+    let jogo = Array(9).fill("")
+
+    function jogada(index) {
+      if (jogo[index] === "") {
+        jogo[index] = player;
+        document.getElementsByClassName("cell")[index].innerHTML = player;
+
+        if (checkWin()) {
+          alert("jogador " + player + " venceu!")
+          reset()
+        } else if (checkDraw()) {
+          alert("empate!");
+          reset();
+        } else {
+          player = player ==="X"?"O":"X"
+        }
+      }
+    }
+
+    function checkWin() {
+      const combinaçõesDeVitorias = [
+        [0,1,2], [3,4,5], [6,7,8],
+        [0,3,6], [1,4,7], [2,5,8],
+        [0,4,8], [2,4,6]
+      ]
+      for (let combinação of combinaçõesDeVitorias) {
+        const [a,b,c] = combinação
+        if (jogo[a] && jogo[a] === jogo[b] && jogo[a] === jogo[c]) {
+          return true
+        }
+      }
+      return false
+    }
+    function checkDraw() {
+      return !jogo.includes("")
+    }
+    function reset() {
+      player = "X";
+      jogo = Array(9).fill("")
+
+      const cells = document.getElementsByClassName("cell");
+      for (let cell of cells){
+        cell.innerText = "";
+      }
+    }
+  </script>
 </body>
 </html>
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo da Velha</title>
+    <style>
+        .container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Velha</h1>
+        <div class="board">
+          <div class="cell" onclick="play(0)"></div>
+          <div class="cell" onclick="play(1)"></div>
+          <div class="cell" onclick="play(2)"></div>
+          <div class="cell" onclick="play(3)"></div>
+          <div class="cell" onclick="play(4)"></div>
+          <div class="cell" onclick="play(5)"></div>
+          <div class="cell" onclick="play(6)"></div>
+          <div class="cell" onclick="play(7)"></div>
+          <div class="cell" onclick="play(8)"></div>
+        </div>
+        <button onclick="reset()">Reiniciar</button>
+      </div>
+      <script>
+        let currentPlayer = "X";
+let board = Array(9).fill("");
+
+function play(index) {
+  if (board[index] === "") {
+    board[index] = currentPlayer;
+    document.getElementsByClassName("cell")[index].innerText = currentPlayer;
+    
+    if (checkWin()) {
+      alert("Jogador " + currentPlayer + " venceu!");
+      reset();
+    } else if (checkDraw()) {
+      alert("Empate!");
+      reset();
+    } else {
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+    }
+  }
+}
+
+function checkWin() {
+  const winningCombinations = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // linhas
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // colunas
+    [0, 4, 8], [2, 4, 6] // diagonais
+  ];
+  
+  for (let combination of winningCombinations) {
+    const [a, b, c] = combination;
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      return true;
+    }
+  }
+  
+  return false;
+}
+
+function checkDraw() {
+  return !board.includes("");
+}
+
+function reset() {
+  currentPlayer = "X";
+  board = Array(9).fill("");
+  
+  const cells = document.getElementsByClassName("cell");
+  for (let cell of cells) {
+    cell.innerText = "";
+  }
+}
+
+      </script>
+</body>
+</html> -->
+  
