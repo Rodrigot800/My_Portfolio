@@ -10,10 +10,24 @@
       padding: 0px;
       box-sizing: border-box;
       text-align: center;
-      background-color: rgb(44, 134, 190);
+      background-color: rgb(16, 124, 190);
+      height: 110vh;
+      font-family: Arial, Helvetica, sans-serif;
     }
     #msg{
       font-size: 1.5em;
+    }
+    #placar{
+      margin: auto;
+      background-color: aliceblue;
+    }
+    table{
+      border-collapse: collapse;
+      margin-bottom: 50px;
+    }
+    tr,td{
+      border: 1px solid black;
+      padding: 15px;
     }
     #jogo{
       display: flex;
@@ -59,10 +73,37 @@
     <div class="cell" ></div>
 
   </div>
-    <div id="msg"></div>
 
     <button id="button" onclick="restartGame()">Reiniciar</button>
 
+    <div>
+          <table id="placar">
+            <tr>
+              <td>
+                Vitórias de X
+              </td>
+              <td id="x">
+                0
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Vitórias de O
+              </td>
+              <td id="o">
+                0
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Empates
+              </td>
+              <td id="Empate">
+                0
+              </td>
+            </tr>
+          </table>
+    </div>
   <script>
 
     var jogo = document.getElementById('jogo');
@@ -72,6 +113,13 @@
     var currentPlayer = 'X';
     var gameActive = true;
     var moves = 0;
+    var placar = document.getElementById('placar')
+    var vx = document.getElementById('x')
+    var vo = document.getElementById('o')
+    var emp = document.getElementById('Empate')
+    var placarX = 0;
+    var placarO = 0;
+    var placarEmpate = 0;
 
     cells.forEach(function(cell) {
       cell.addEventListener('click', handleClick);
@@ -80,23 +128,33 @@
     function handleClick() {
       if (!gameActive || this.textContent !== '') return;
 
-      this.textContent = currentPlayer;
-      this.classList.add(currentPlayer === 'X' ? 'x' : 'o');
-      moves++;
+      this.textContent =  currentPlayer
+      this.classList.add(currentPlayer === 'X'?'x':'o')
+      moves++
 
       if (checkWinner()) {
-        msg.textContent = 'Jogador ' + currentPlayer + ' venceu!';
-        gameActive = false;
-      } else if (moves === 9) {
-        msg.textContent = 'Empate!';
-        gameActive = false;
+        msg.textContent = 'jogador '+ currentPlayer + ' venceu!'
+        gameActive = false
+
+        if ( currentPlayer == ('X')) {
+          placarX++
+          vx.textContent = placarX
+        } else if (currentPlayer == ('O')){
+          placarO++
+          vo.textContent = placarO
+        }
+      } else if (moves == 9) {
+        msg.textContent = 'Empate!'
+        gameActive = false
+        placarEmpate++;
+        emp.textContent = placarEmpate;
       } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        msg.textContent = 'É a vez do jogador ' + currentPlayer;
+        currentPlayer = currentPlayer === 'X'?'O':'X'
+        msg.textContent = 'É a vez do jogador ' + currentPlayer
       }
     }
 
-    function checkWinner() {
+    function checkWinner(){
       var winningCombinations = [
         [0, 1, 2],
         [3, 4, 5],
@@ -108,8 +166,8 @@
         [2, 4, 6]
       ];
 
-      for (var i = 0; i < winningCombinations.length; i++) {
-        var [a, b, c] = winningCombinations[i];
+      for( var i = 0; i < winningCombinations.length;  i++){
+        var [a,b,c] = winningCombinations[i];
         if (
           cells[a].textContent === currentPlayer &&
           cells[b].textContent === currentPlayer &&
@@ -118,24 +176,51 @@
           cells[a].classList.add('win');
           cells[b].classList.add('win');
           cells[c].classList.add('win');
-          return true;
+          return true ;
         }
-      }
+       }
+       return false
+     }
 
-      return false;
+     function restartGame() {
+        cells.forEach(function(cell) {
+          cell.textContent = ''
+          cell.classList.remove('x','o','win')
+        })
+
+        msg.textContent = ''
+        currentPlayer = 'X'
+        gameActive = true
+        moves = 0
+     }
+     /*function checkWinner() {
+  var winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+
+  for (var i = 0; i < winningCombinations.length; i++) {
+    var [a, b, c] = winningCombinations[i];
+    if (
+      cells[a].textContent === currentPlayer &&
+      cells[b].textContent === currentPlayer &&
+      cells[c].textContent === currentPlayer
+    ) {
+      cells[a].classList.add('win');
+      cells[b].classList.add('win');
+      cells[c].classList.add('win');
+      return true;
     }
+  }
 
-    function restartGame() {
-      cells.forEach(function(cell) {
-        cell.textContent = '';
-        cell.classList.remove('x', 'o', 'win');
-      });
-
-      msg.textContent = '';
-      currentPlayer = 'X';
-      gameActive = true;
-      moves = 0;
-    }
+  return false;
+}*/
 //primeiro codigo javascript desenvolvido baixo
    
     /*
