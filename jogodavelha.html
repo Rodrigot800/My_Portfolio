@@ -143,11 +143,13 @@
           placarO++
           vo.textContent = placarO
         }
+        setTimeout(restartGame, 2000)
       } else if (moves == 9) {
         msg.textContent = 'Empate!'
         gameActive = false
         placarEmpate++;
         emp.textContent = placarEmpate;
+        setTimeout(restartGame, 2000)
       } else {
         currentPlayer = currentPlayer === 'X'?'O':'X'
         msg.textContent = 'É a vez do jogador ' + currentPlayer
