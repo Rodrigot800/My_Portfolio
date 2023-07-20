@@ -78,7 +78,7 @@
 
     <div>
           <table id="placar">
-            <tr>
+            <tr id="cor1">
               <td>
                 Vitórias de X
               </td>
@@ -86,7 +86,7 @@
                 0
               </td>
             </tr>
-            <tr>
+            <tr id="cor2">
               <td>
                 Vitórias de O
               </td>
@@ -120,6 +120,8 @@
     var placarX = 0;
     var placarO = 0;
     var placarEmpate = 0;
+    var c1 = document.getElementById('cor1')
+    var c2 = document.getElementById('cor2')
 
     cells.forEach(function(cell) {
       cell.addEventListener('click', handleClick);
@@ -138,18 +140,28 @@
 
         if ( currentPlayer == ('X')) {
           placarX++
-          vx.textContent = placarX
+          vx.innerHTML = `${placarX}`
         } else if (currentPlayer == ('O')){
           placarO++
-          vo.textContent = placarO
+          vo.innerHTML = `${placarO}`
         }
-        setTimeout(restartGame, 2000)
+        if (placarX > placarO) {
+          c1.style.backgroundColor = 'lightgreen'
+          c2.style.backgroundColor = 'white'
+        } else if(placarX < placarO) {
+          c2.style.backgroundColor = 'lightgreen'
+          c1.style.backgroundColor = 'white'
+        } else{
+          c1.style.background = 'white'
+          c2.style.background = 'white'
+        }
+        setTimeout(restartGame, 1500)
       } else if (moves == 9) {
         msg.textContent = 'Empate!'
         gameActive = false
         placarEmpate++;
         emp.textContent = placarEmpate;
-        setTimeout(restartGame, 2000)
+        setTimeout(restartGame, 1500)
       } else {
         currentPlayer = currentPlayer === 'X'?'O':'X'
         msg.textContent = 'É a vez do jogador ' + currentPlayer
