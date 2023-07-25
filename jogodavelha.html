@@ -19,7 +19,7 @@
     }
     #placar{
       margin: auto;
-      background-color: aliceblue;
+      background-color: white;
     }
     table{
       border-collapse: collapse;
@@ -207,84 +207,6 @@
         gameActive = true
         moves = 0
      }
-     /*function checkWinner() {
-  var winningCombinations = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-  ];
-
-  for (var i = 0; i < winningCombinations.length; i++) {
-    var [a, b, c] = winningCombinations[i];
-    if (
-      cells[a].textContent === currentPlayer &&
-      cells[b].textContent === currentPlayer &&
-      cells[c].textContent === currentPlayer
-    ) {
-      cells[a].classList.add('win');
-      cells[b].classList.add('win');
-      cells[c].classList.add('win');
-      return true;
-    }
-  }
-
-  return false;
-}*/
-//primeiro codigo javascript desenvolvido baixo
-   
-    /*
-    let player =  "X";
-    let jogo = Array(9).fill("");
-    let msg = document.getElementById("msg");
-
-    function jogada(index) {
-      if (jogo[index] === "") {
-        jogo[index] = player;
-        document.getElementsByClassName("cell")[index].innerHTML = player;
-
-        if (checkWin()) {
-          alert("o jogador "+ player + " venceu!")
-          reset()
-        } else if (checkDraw()) {
-          alert("empate")
-          reset()
-        } else {
-          player = player ==="X"?"O":"X";
-        }
-      }
-    }
-
-    function checkWin() {
-      const combinaçõesDeVitorias = [
-        [0,1,2], [3,4,5], [6,7,8],
-        [0,3,6], [1,4,7], [2,5,8],
-        [0,4,8], [2,4,6]
-      ]
-      for (let combinação of combinaçõesDeVitorias) {
-        const [a,b,c] = combinação
-        if (jogo[a] && jogo[a] === jogo[b] && jogo[a] === jogo[c]) {
-          return true
-        }
-      }
-      return false
-    }
-    function checkDraw() {
-      return !jogo.includes("")
-    }
-    function reset() {
-      player = "X";
-      jogo = Array(9).fill("")
-
-      const cells = document.getElementsByClassName("cell");
-      for (let cell of cells){
-        cell.innerText = "";
-      }
-    }*/
   </script>
 </body>
 </html>
