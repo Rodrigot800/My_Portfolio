@@ -2,11 +2,22 @@
     .projet{
         margin: 20px;
     }
-
+    #menu{
+        margin: 0;
+        position: relative;
+        left: 85vw;
+    }
     
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
     *{
         font-size: 1em;
     }
+    #menu{
+        position: relative;
+        left: 85vw;
+    }
 }
+
+
+

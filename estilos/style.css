@@ -49,8 +49,17 @@ header{
 }
 #menu{
     display: block;
+    width: 10vw;
     font-size: 2.5em;
+    margin: auto;
     
+}
+#imgnav1{
+    height: 50px;
+    width: auto;
+    position: relative;
+    top: 20px;
+    background-color: #0077b6;
 }
 #menu:hover{
     cursor: pointer;
