@@ -44,31 +44,36 @@ header{
     top: 0;
     background-color:rgb(255, 255, 255);
     width: 99.9%;
-    text-align: center;
     z-index: 1;
 }
 #menu{
     display: block;
     width: 10vw;
     font-size: 2.5em;
-    margin: auto;
+    position: relative;
+    right: 15vw;
     
 }
-#imgnav1{
-    height: 50px;
-    width: auto;
-    position: relative;
-    top: 20px;
-    background-color: #0077b6;
-}
+
 #menu:hover{
     cursor: pointer;
 }
 nav{
     box-shadow: 1px 5px 5px var(--cor-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#navimg1{
+    width: 50px;
+    height: auto;
+    position: relative;
+    left: 10vw;
 }
 menu{
     display: none;
+    text-align: center;
 }
 #itens > ul > li > a{
     display: block;

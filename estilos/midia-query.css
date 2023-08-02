@@ -4,8 +4,7 @@
     }
     #menu{
         margin: 0;
-        position: relative;
-        left: 85vw;
+        right: 10vw;
     }
     
 }
@@ -13,9 +12,11 @@
     *{
         font-size: 1em;
     }
+    #navimg1{
+        left: 5vw;
+    }
     #menu{
-        position: relative;
-        left: 85vw;
+        right: -2vw;
     }
 }
 
