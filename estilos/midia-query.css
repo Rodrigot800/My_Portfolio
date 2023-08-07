@@ -6,6 +6,9 @@
         margin: 0;
         right: 10vw;
     }
+    #apresentação_perfil2{
+        font-size: 2em;
+    }
     
 }
 @media screen and (min-width: 1000px) {
