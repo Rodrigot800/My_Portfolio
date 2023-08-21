@@ -272,6 +272,19 @@ main{
 #text > h2{
     text-align: center;
 }
+.visualização-do-projeto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--cor4);
+    height: 2em;
+    width: 80%;
+    margin: auto;
+    border-radius: 15px;
+    margin-top: 10%;
+    box-shadow: 2px 2px 2px var(--cor4);
+}
 .conteineimg{
     padding-bottom: 300px;
 }
