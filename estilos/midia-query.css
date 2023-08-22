@@ -21,7 +21,14 @@
     #menu{
         right: -2vw;
     }
+    h2{
+        font-size: 1.2em;
+    }
+    #contato>h2{
+        font-size: 2em;
+    }
 }
+
 
 
 
