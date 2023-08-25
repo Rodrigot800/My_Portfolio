@@ -241,6 +241,9 @@ main{
 }
 .imgprojet{
     background-color: #0ff;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     padding-top: 10px;
     margin: auto;
     width: 100%;
@@ -249,36 +252,12 @@ main{
 }
 #imgp1{
     background-image: url(../imagem/calc.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding-top: 10px;
-    margin: auto ;
-    width: 100%;
-    height: 250px;
-    border-radius: 10px 10px 0px 0px;
 }
 #imgp3{
     background-image: url(../imagem/jogodamemoria.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding-top: 10px;
-    margin: auto ;
-    width: 100%;
-    height: 250px;
-    border-radius: 10px 10px 0px 0px;
 }
 #imgp4{
     background-image: url(../imagem/jogodavelha.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding-top: 10px;
-    margin: auto ;
-    width: 100%;
-    height: 250px;
-    border-radius: 10px 10px 0px 0px;
 }
 #textp1{
     color: black; 
